@@ -13,8 +13,16 @@ class UserController {
   }
 
   async deleteUser(userId: string) {
-    return await UserService.delete(userId);
+    await UserService.delete(userId);
+    return {
+      status: "success",
+      message: "User deleted",
+    };
   }
 }
 
 export default new UserController();
+
+
+// express -> http -> net
+// auth-> cookie, jwt (token), session, oAuth..

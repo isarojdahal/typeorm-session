@@ -45,11 +45,7 @@ class UserService {
     });
     if (!user) return { status: "error", message: "User doesnot exist" };
 
-    await User.remove(user);
-    return {
-      status: "success",
-      message: "User deleted",
-    };
+    return await User.remove(user);
   }
 }
 
